@@ -41,6 +41,7 @@ RUN apk add --no-cache \
     ruby \
     ruby-mathematical \
     ruby-rake \
+    sassc \
     ttf-liberation \
     ttf-dejavu \
     tzdata \

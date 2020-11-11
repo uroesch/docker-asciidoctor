@@ -1,8 +1,8 @@
 
 DOCKER_IMAGE_NAME ?= docker-asciidoctor
-DOCKERHUB_USERNAME ?= asciidoctor
+DOCKERHUB_USERNAME ?= uroesch
 CURRENT_GIT_REF ?= $(shell git rev-parse --abbrev-ref HEAD) # Default to current branch
-DOCKER_IMAGE_TAG ?= $(shell echo $(CURRENT_GIT_REF) | sed 's/\//-/' )
+DOCKER_IMAGE_TAG ?= $(shell echo $(CURRENT_GIT_REF) | sed 's|.*/.*[^-]-|v|g' )
 DOCKER_IMAGE_NAME_TO_TEST ?= $(DOCKERHUB_USERNAME)/$(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG)
 ASCIIDOCTOR_VERSION ?= 2.0.12
 ASCIIDOCTOR_CONFLUENCE_VERSION ?= 0.0.2
