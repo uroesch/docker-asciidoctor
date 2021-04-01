@@ -51,6 +51,10 @@ teardown() {
   docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" which asciidoctor-epub3
 }
 
+@test "asciidoctor-fb2 is installed and in the path" {
+  docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" which asciidoctor-fb2
+}
+
 @test "curl is installed and in the path" {
   docker run -t --rm "${DOCKER_IMAGE_NAME_TO_TEST}" which curl
 }
@@ -162,6 +166,18 @@ teardown() {
     -v "${BATS_TEST_DIRNAME}":/documents/ \
     "${DOCKER_IMAGE_NAME_TO_TEST}" \
       asciidoctor-epub3 /documents/fixtures/epub-sample/sample-book.adoc -D /documents/tmp
+
+  [ "${status}" -eq 0 ]
+
+}
+
+
+@test "We can generate an FB2 document with asciidoctor-fb2" {
+
+  run docker run -t --rm \
+    -v "${BATS_TEST_DIRNAME}":/documents/ \
+    "${DOCKER_IMAGE_NAME_TO_TEST}" \
+      asciidoctor-fb2 /documents/fixtures/fb2-sample/sample-book.adoc -D /documents/tmp
 
   [ "${status}" -eq 0 ]
 
