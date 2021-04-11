@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 LABEL MAINTAINERS="Guillaume Scheibel <guillaume.scheibel@gmail.com>, Damien DUPORTAL <damien.duportal@gmail.com>"
 
-ARG asciidoctor_version=2.0.12
+ARG asciidoctor_version=2.0.13
 ARG asciidoctor_confluence_version=0.0.2
 ARG asciidoctor_pdf_version=1.5.4
 ARG asciidoctor_diagram_version=2.0.1
