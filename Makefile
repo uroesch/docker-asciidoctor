@@ -2,7 +2,7 @@
 
 DOCKER_USER    := uroesch
 DOCKER_TAG     := docker-asciidoctor
-DOCKER_VERSION := $(shell sed '/^.VERSION/!d; s/.* //' Dockerfile)
+DOCKER_VERSION := $(shell awk -F : '/^FROM / { print $$(NF) }' Dockerfile)
 
 .PHONY: all list to-latest
 
