@@ -7,4 +7,8 @@ added.
 
 ## Installed Tools
 
-  - sassc for handling asciidoctor templates
+  - `sassc` for handling asciidoctor templates
+
+## Extras
+
+  - @rapper script in `bin` called `docker-asciidoctor` to run the container

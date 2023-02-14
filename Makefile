@@ -1,7 +1,7 @@
 # vim: shiftwidth=2 tabstop=2 noexpandtab :
 
 DOCKER_USER    := uroesch
-DOCKER_TAG     := docker-asciidoctor
+DOCKER_TAG     := asciidoctor
 DOCKER_VERSION := $(shell awk -F : '/^FROM / { print $$(NF) }' Dockerfile)
 
 .PHONY: all list to-latest
