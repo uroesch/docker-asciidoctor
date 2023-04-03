@@ -9,6 +9,10 @@ added.
 
   - `sassc` for handling asciidoctor templates
 
+  - `ruby-ffi` to install the the `compass` gem.
+
+  - `compass` ruby gem to compile themes.
+
 ## Extras
 
   - @rapper script in `bin` called `docker-asciidoctor` to run the container

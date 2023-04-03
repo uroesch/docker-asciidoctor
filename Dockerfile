@@ -1,5 +1,8 @@
-FROM asciidoctor/docker-asciidoctor:1.41.0
+FROM asciidoctor/docker-asciidoctor:1.42.0
 MAINTAINER Urs Roesch <github@bun.ch>
 
 # install base tools for docker build
-RUN apk add --no-cache sassc
+RUN apk add --no-cache sassc ruby-ffi
+
+# install gems
+RUN gem install compass zurb-foundation

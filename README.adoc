@@ -34,6 +34,8 @@ added.
 == Installed Tools
 
 * `sassc` for handling asciidoctor templates
+* `ruby-ffi` to install the the `compass` gem.
+* `compass` ruby gem to compile themes.
 
 == Extras
 
