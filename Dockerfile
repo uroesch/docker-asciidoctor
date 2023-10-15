@@ -1,4 +1,4 @@
-FROM asciidoctor/docker-asciidoctor:1.56.0
+FROM asciidoctor/docker-asciidoctor:1.57.0
 MAINTAINER Urs Roesch <github@bun.ch>
 
 # install base tools for docker build
