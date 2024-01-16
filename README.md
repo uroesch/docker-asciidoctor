@@ -7,12 +7,12 @@ added.
 
 ## Installed Tools
 
-  - `sassc` for handling asciidoctor templates
+-   `sassc` for handling asciidoctor templates
 
-  - `ruby-ffi` to install the the `compass` gem.
+-   `ruby-ffi` to install the the `compass` gem.
 
-  - `compass` ruby gem to compile themes.
+-   `compass` ruby gem to compile themes.
 
 ## Extras
 
-  - @rapper script in `bin` called `docker-asciidoctor` to run the container
+-   @rapper script in `bin` called `docker-asciidoctor` to run the container
