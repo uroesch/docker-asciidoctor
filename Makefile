@@ -8,6 +8,16 @@ DOCKER_VERSION := $(shell awk -F : '/^FROM / { print $$(NF) }' Dockerfile)
 
 all: build clean doc
 
+git-commit:
+	git commit -a -m "Release version $(DOCKER_VERSION) with changes from upstream"
+
+git-tag: git-commit
+	git tag $(DOCKER_VERSION)
+
+git-push: git-tag
+	git push
+	git push --tags
+
 to-latest:
 	docker tag $(DOCKER_USER)/$(DOCKER_TAG):$(DOCKER_VERSION) \
 		$(DOCKER_USER)/$(DOCKER_TAG):latest
