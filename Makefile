@@ -4,7 +4,7 @@ DOCKER_USER    := uroesch
 DOCKER_TAG     := asciidoctor
 DOCKER_VERSION := $(shell awk -F : '/^FROM / { print $$(NF) }' Dockerfile)
 
-.PHONY: all list to-latest
+.PHONY: all list to-latest help
 
 all: build clean doc
 
@@ -54,8 +54,22 @@ clean:
 	IMAGES="$(shell docker images -qf dangling=true)"; \
 	if [ -n "$${IMAGES}" ]; then docker rmi $${IMAGES}; fi
 
-
 doc:
 	asciidoctor -b docbook -a leveloffset=+1 -o - README.adoc | \
 		pandoc --atx-headers --wrap=preserve -t gfm -f docbook - > README.md
 
+help:
+	@printf "Usage: \n\n"; \
+	printf "  make %-16s %s\n" \
+		all             "Build, clean and create documents." \
+		cleanup         "Cleanup docker's cache." \
+		doc             "Build documentation." \
+		force           "Build with no cache." \
+		git-commit      "Create a commit from the latest version." \
+		git-push        "Run git-tag and then push to the upstream repo." \
+		git-tag         "Create a git tag after running git-commit." \
+		help            "This message." \
+		push            "Push to docker hub after building." \
+		push-as-latest  "Push to docker after taging the release as latest." \
+		push-only       "Push to docker hub without building the container." \
+		to-latest       "Tag as latest."
