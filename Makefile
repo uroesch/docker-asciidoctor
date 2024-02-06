@@ -62,7 +62,7 @@ help:
 	@printf "Usage: \n\n"; \
 	printf "  make %-16s %s\n" \
 		all             "Build, clean and create documents." \
-		cleanup         "Cleanup docker's cache." \
+		clean           "Cleanup docker's cache." \
 		doc             "Build documentation." \
 		force           "Build with no cache." \
 		git-commit      "Create a commit from the latest version." \
